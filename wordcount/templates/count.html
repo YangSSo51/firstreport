@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{%block content %}
+
+<div class="container">
+    <br><br>
+        <div class="card w-75">
+                <div class="card-body">
+                  <h5 class="card-title">Wordcount</h5>
+                  <p class="card-text">당신이 입력한 텍스트는 {{total}}단어로 구성되어있습니다.</p>
+                  <a href="{%url 'main'%}" class="btn " style="background-color:#ffa500">다시하기</a>
+                </div>
+              </div>
+              <br><br>
+              
+             
+              <div class="card">
+                    <div class="card-header">
+                        <strong>입력한 텍스트</strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <br>
+                      <div class="container">
+                        <p> {{fulltext}}</p>
+                    </div>
+                    </ul>
+                  </div>
+                  <br><br>
+                  <div class="card">
+                        <div class="card-header">
+                            <strong>단어카운트</strong>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <div class="container">
+                        <br>
+                                {% for word,countTotal in dictionary %}
+                                 {{word}} : {{countTotal}} 번
+                                <br><br>
+                                {% endfor %}
+                            </div>
+                      </div>
+                      <br><br>
+                  
+  
+</div>
+{%endblock%}

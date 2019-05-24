@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{%block content %}
+<br><br>
+<div class="card text-center">
+        <div class="card-header">
+          <h1>Wordcount</h1>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">글을 입력하세요~</h5>
+          <p class="card-text">
+                <form action="{%url 'count'%}">
+                        <textarea cols="80" rows="15" name="fulltext"></textarea>
+                        <br>
+                        <button type="submit" class="btn" style="background-color:#ffa500">Count!</button>
+                    </form>  
+                </div>
+                <div class="card-footer text-muted" style="color:#ffa500">
+                        <a href="{%url 'about'%}">about</a>
+                      </div>
+    
+{%endblock%}
